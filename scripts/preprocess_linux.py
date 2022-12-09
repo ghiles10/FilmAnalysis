@@ -40,7 +40,7 @@ def preproces_for_machine_learning(data, spark_session) :
 
     ################### caster le format des colonnes
     for col in ['note','nombre avis'] : 
-        data = data.withColumn(col ,F.col(col).cast('int')) 
+        data = data.withColumn(col ,F.col(col).cast('float')) 
 
     return data 
   
