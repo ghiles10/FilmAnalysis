@@ -1,5 +1,4 @@
-from pyspark.sql import functions as F 
-import re 
+from pyspark.sql import functions as F
 
 def preproces_for_machine_learning(data, spark_session) :  
 
@@ -10,17 +9,7 @@ def preproces_for_machine_learning(data, spark_session) :
 
     # traitment de la variable type
     data = data.withColumn("type", F.regexp_replace(F.col("type"), "[\[\]',]", ""))
-
-    # traitment de la variable date
-    def recuperation_mois() : 
-        """retourne un set des mois des sorties de flm afin de les encoder plus tard"""
-        mois = []
-        for date in data.select(F.collect_list("date")).first()[0] : # liste des mois 
-            regex_date = re.findall(r'[^0-9-]+', date) 
-            mois.append(regex_date[0]) 
-
-        return set(mois)
-            
+ 
     # encoder la variable date afin de passer du format francais a un format usuel  
     data = data.withColumn("date", F.regexp_replace('date','août', "08"))
     data = data.withColumn("date", F.regexp_replace('date','avril', "04"))
@@ -28,6 +17,7 @@ def preproces_for_machine_learning(data, spark_session) :
     data = data.withColumn("date", F.regexp_replace('date','février', "02"))
     data = data.withColumn("date", F.regexp_replace('date','janvier', "01"))
     data = data.withColumn("date", F.regexp_replace('date','juillet', "07"))
+    data = data.withColumn("date", F.regexp_replace('date','mars', "03"))
     data = data.withColumn("date", F.regexp_replace('date','juin', "06"))
     data = data.withColumn("date", F.regexp_replace('date','mai', "05"))
     data = data.withColumn("date", F.regexp_replace('date','novembre', "11"))
@@ -39,8 +29,8 @@ def preproces_for_machine_learning(data, spark_session) :
     data = data.withColumn("date", F.to_date("date", "dd MM yyyy")) 
 
     ################### caster le format des colonnes
-    for col in ['note','nombre avis'] : 
-        data = data.withColumn(col ,F.col(col).cast('float')) 
+    # for col in ['note','nombre avis'] : 
+    #     data = data.withColumn(col ,F.col(col).cast('float')) 
 
     return data 
   

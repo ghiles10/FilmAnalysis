@@ -16,8 +16,6 @@ def extract_data() :
 
    
 
-
-
 def write_titre_txt() :
 
     """ permet d'ecrire le titre des films dans un fichier txt et utilisation dans bash"""
