@@ -22,4 +22,4 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # construction de l'image 
 echo '----> construction a partir du docker file '
-sudo docker build -t projet-linux:1.0 . 
+sudo docker build -t projet-linux:1.0 ..
