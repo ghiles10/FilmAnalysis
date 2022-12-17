@@ -13,7 +13,7 @@ RUN mv spark-3.3.1-bin-hadoop3 spark
 RUN apt-get -y install python3 
 RUN apt-get -y install python3-pip
 
-RUN pip install -r requirements.txt 
+RUN pip install -r requirements.txt
  
 
 CMD ["bash", "notebook/app_final.sh"]
