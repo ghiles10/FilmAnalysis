@@ -23,13 +23,14 @@ data = preprocess_linux.preproces_for_machine_learning(raw_data, spark_session)
 # affichage du titre -> fin du projet 
 input_file = sys.argv[1]
 
-print('voici le , ', str(input_file))
+# print('voici le , ', str(input_file))
 
-# affichage du titre -> fin du projet 
+#^ affichage du titre -> fin du projet 
 data_a_afficher = data.where(col('titre') == str(input_file)) # selection de la ligne a afficher
 
 print('----> Infos du film :')
-print('-----------------')
+print('----------------------')
+print()
 print( '- Titre :',data_a_afficher.select('titre').collect()[0][0] ) 
 print( '- Date de sortie :',data_a_afficher.select('date').collect()[0][0] ) 
 print( '- Durée :',data_a_afficher.select('duree').collect()[0][0] ) 
