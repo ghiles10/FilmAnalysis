@@ -46,10 +46,12 @@ def demande_nouveau_titre() :
     demande_nv_titre = input('Un autre titre? oui/non ')
 
     if str(demande_nv_titre) == 'oui' : 
-        
+
         nouveau_titre = input('Ecrire titre : ')
         fin_projet(str(nouveau_titre))
         demande_nouveau_titre() #récursivité 
 
     else :
         print('Au revoir !')
+        
+demande_nouveau_titre()
