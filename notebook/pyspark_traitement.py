@@ -22,11 +22,10 @@ data = preprocess_linux.preproces_for_machine_learning(raw_data, spark_session)
 
 # affichage du titre -> fin du projet 
 input_file = sys.argv[1]
-
-# print('voici le , ', str(input_file))
-
 # affichage du titre -> fin du projet 
 def fin_projet(input_file) : 
+
+    """permet d'afficher les resultats """
 
     data_a_afficher = data.where(col('titre') == str(input_file)) # selection de la ligne a afficher
     print()
@@ -42,11 +41,15 @@ def fin_projet(input_file) :
 
 fin_projet(input_file)
 
-demande_nv_titre = input('Un autre titre? oui/non ')
+def demande_nouveau_titre() :
 
-if str(demande_nv_titre) == 'oui' : 
-    nouveau_titre = input('Ecrire titre : ')
-    fin_projet(str(nouveau_titre))
+    demande_nv_titre = input('Un autre titre? oui/non ')
 
-else :
-    print('Au revoir !')
+    if str(demande_nv_titre) == 'oui' : 
+        
+        nouveau_titre = input('Ecrire titre : ')
+        fin_projet(str(nouveau_titre))
+        demande_nouveau_titre() #récursivité 
+
+    else :
+        print('Au revoir !')
