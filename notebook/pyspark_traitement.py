@@ -25,15 +25,28 @@ input_file = sys.argv[1]
 
 # print('voici le , ', str(input_file))
 
-#^ affichage du titre -> fin du projet 
-data_a_afficher = data.where(col('titre') == str(input_file)) # selection de la ligne a afficher
-print()
-print('--------> Infos du film :')
-print('----------------------')
-print()
-print( '- Titre :',data_a_afficher.select('titre').collect()[0][0] ) 
-print( '- Date de sortie :',data_a_afficher.select('date').collect()[0][0] ) 
-print( '- Durée :',data_a_afficher.select('duree').collect()[0][0] ) 
-print( '- Note :',data_a_afficher.select('note').collect()[0][0] ) 
-print( '- Type :',data_a_afficher.select('type').collect()[0][0] ) 
-print( '- Nombre d\'avis :',int (data_a_afficher.select('nombre avis').collect()[0][0] ) )
+# affichage du titre -> fin du projet 
+def fin_projet(input_file) : 
+
+    data_a_afficher = data.where(col('titre') == str(input_file)) # selection de la ligne a afficher
+    print()
+    print('--------> Infos du film :')
+    print('----------------------')
+    print()
+    print( '- Titre :',data_a_afficher.select('titre').collect()[0][0] ) 
+    print( '- Date de sortie :',data_a_afficher.select('date').collect()[0][0] ) 
+    print( '- Durée :',data_a_afficher.select('duree').collect()[0][0] ) 
+    print( '- Note :',data_a_afficher.select('note').collect()[0][0] ) 
+    print( '- Type :',data_a_afficher.select('type').collect()[0][0] ) 
+    print( '- Nombre d\'avis :',int (data_a_afficher.select('nombre avis').collect()[0][0] ) )
+
+fin_projet(input_file)
+
+input = input('Un autre titre? oui/non ')
+
+if str(input) == 'oui' : 
+    nouveau_titre = input('Ecrire titre : ')
+    fin_projet(str(nouveau_titre))
+
+if str(input) == 'non' : 
+    print('Au revoir !')
