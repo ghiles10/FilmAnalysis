@@ -27,8 +27,8 @@ input_file = sys.argv[1]
 
 #^ affichage du titre -> fin du projet 
 data_a_afficher = data.where(col('titre') == str(input_file)) # selection de la ligne a afficher
-
-print('----> Infos du film :')
+print()
+print('--------> Infos du film :')
 print('----------------------')
 print()
 print( '- Titre :',data_a_afficher.select('titre').collect()[0][0] ) 
