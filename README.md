@@ -5,7 +5,7 @@ Le projet est structuré en dossiers spécifiques à chaque partie.
 
 Suivez les étapes ci dessous afin d'éxecuter : 
 
-`cd /FilmAnalysis/notebook`
+`cd FilmAnalysis/notebook`
 
 `bash install.sh`
 
