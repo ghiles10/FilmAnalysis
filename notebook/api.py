@@ -26,18 +26,24 @@ def affichage_film(input_file):
     return info_film 
 
 def main():
+
     st.title("API FILM")
-    html_temp = """
+
+    HTML_TEMP = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">FILM API </h2>
     </div>
     """
-st.markdown(html_temp,unsafe_allow_html=True)
+    st.markdown(HTML_TEMP, unsafe_allow_html=True)
 
-input_file = st.text_input("Titre","Type Here")
+    titre_choisit = st.text_input("Titre","Type Here")
 
-result=""
+    result=""
 
-if st.button("Afficher les données"):
-    result=affichage_film(input_file)
-st.success('INFOS : {}'.format(result))
+    if st.button("Afficher les données"):
+        result=affichage_film(titre_choisit)
+    st.success('INFOS : {}'.format(result))
+
+if __name__ == '__main__' : 
+    main()
+

@@ -4,7 +4,7 @@ def affichage_info(input_file) :
     
     # ajouter le module dans liste des modules pour faire appel
     import sys
-    sys.path.append(r"../scripts")
+    sys.path.append(r"./scripts")
 
     from pyspark.sql import SparkSession
     from pyspark.sql.functions import col
@@ -17,7 +17,7 @@ def affichage_info(input_file) :
     spark_session = SparkSession.builder.appName('data_film').getOrCreate()
 
     # base de données
-    raw_data = spark_session.read.option("delimiter", "\t").csv(r'/data/data_film.txt', header=False)
+    raw_data = spark_session.read.option("delimiter", "\t").csv(r'./data/data_film.txt', header=False)
     raw_data = raw_data.toDF('titre', 'date', 'duree', 'type', 'note', 'nombre avis', 'avis')
 
     # PREPROCESS

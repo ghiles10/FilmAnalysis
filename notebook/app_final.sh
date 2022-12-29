@@ -7,7 +7,7 @@ python3  /app/scripts/write_to_txt.py
 echo '- veuillez entrer un titre parmis la liste des titres proposés dans la page web : '
 
 # affiche la liste des titre de film
-cat /app/titre_film.txt 
+cat /app/data/titre_film.txt 
 
 # run le script final qui nettoie la base de données et affiche les infos 
 streamlit run ./notebook/api.py 

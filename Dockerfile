@@ -2,7 +2,7 @@ FROM ubuntu:latest
 ADD . /app
 WORKDIR /app 
 
-RUN apt-get update && apt-get install -y chromium
+RUN apt-get update
 RUN apt-get -y install wget
 RUN apt-get -y install openjdk-8-jdk-headless 
 RUN wget https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
