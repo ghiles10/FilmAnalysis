@@ -10,6 +10,6 @@ echo '- veuillez entrer un titre parmis la liste des titres proposés dans la pa
 cat /app/titre_film.txt 
 
 # run le script final qui nettoie la base de données et affiche les infos 
-streamlit run /app/notebook/api.py 
+streamlit run ./notebook/api.py 
 
 
