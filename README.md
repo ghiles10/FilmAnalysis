@@ -5,7 +5,11 @@ This project aims to collect data on movies from different websites using the we
 
 The project is deployed in a Docker container by creating a Dockerfile image. This makes it easy to install and run the project on any computer with Docker.
 
-The app is hosted on the local machine at http://localhost:5000.
+The app is hosted on the local machine at http://localhost:5000
+
+## project structure 
+### webscraping 
+ok
 
 ## Getting Started
 
