@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Information du titre</title>
+</head>
+<body>
+    <h1>Entrez un titre :</h1>
+    <form method="post">
+        <input type="text" name="title">
+        <input type="submit" value="Envoyer">
+    </form>
+    {% if title_info %}
+    <h2>Informations du titre :</h2>
+    <p>{{ title_info }}</p>
+    {% endif %}
+</body>
+</html>

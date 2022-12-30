@@ -2,9 +2,9 @@ def affichage_info(input_file) :
 
     '''affiche les infos du titre choisit'''
     
-    # ajouter le module dans liste des modules pour faire appel
     import sys
-    sys.path.append(r"./scripts")
+    # Récupération du titre du film passé en argument
+    # input_file = sys.argv[1]
 
     from pyspark.sql import SparkSession
     from pyspark.sql.functions import col
@@ -30,3 +30,7 @@ def affichage_info(input_file) :
     f"Durée : {data_a_afficher.select('duree').collect()[0][0]}",\
     f"Note : {data_a_afficher.select('note').collect()[0][0]}" ,f"Type : {data_a_afficher.select('type').collect()[0][0]}",\
     f"Nombre d\'avis {int (data_a_afficher.select('nombre avis').collect()[0][0])}"
+
+
+if __name__ == '__main__' : 
+    affichage_info(input_file)

@@ -15,7 +15,7 @@ RUN apt-get -y install python3-pip
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8501
+EXPOSE 5000
 
 CMD ["bash", "notebook/app_final.sh"]
 

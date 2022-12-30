@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # lancement 
-sudo docker run -p 8501:8501 projet-linux:1.0 
+sudo docker run -p 5000:5000 projet-linux:1.0 
