@@ -8,8 +8,22 @@ The project is deployed in a Docker container by creating a Dockerfile image. Th
 The app is hosted on the local machine at http://localhost:5000
 
 ## project structure 
+
 ### webscraping 
-ok
+
+Data recovery from the AlloCiné website : https://www.allocine.fr/
+
+### Database 
+
+Use of pyspark to clean the data and build a compact database
+
+### Web Application
+
+this project includes a user interface developed with Flask that asks the user to enter a movie title. This interface uses the HTTP POST method to query the database through PySpark and displays the results to the user.
+
+### DockerFile
+
+A Dockerfile image has been built which gathers all the elements of our project and which allows to run it in a Docker container.
 
 ## Getting Started
 
