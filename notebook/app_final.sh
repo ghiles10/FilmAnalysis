@@ -5,24 +5,17 @@ echo '----> cela ne va pas prendre beaucoup de temps car le réglage du script p
 # faire appel au script qui scrapp les données et stock dans des fichiers txt
 python3  /app/scripts/write_to_txt.py 
 
-echo ' '
-echo '----> veuillez copier et entrer un titre parmis la liste des titres proposés : '
-echo ' ' 
+echo '- veuillez entrer un titre parmis la liste des titres proposés dans la page web : '
 
 # affiche la liste des titre de film
-cat /app/titre_film.txt 
+cat /app/data/titre_film.txt 
 
-# demander a l'utilisateur d'entrer le titre
-echo ' '
-read -p "écrire le nom : " titre
-export titre 
 
-echo ' ' 
-echo '----> vous avez choisit : ' $titre
-echo '----> Récupération des informations ...'
-echo ' '
+# traitement des données 
+python3  ./scripts/recuperation_infos_spark.py 
 
 # run le script final qui nettoie la base de données et affiche les infos 
-python3 /app/notebook/pyspark_traitement.py "$titre" 
+python3 ./test_flask/app.py 
+
 
 

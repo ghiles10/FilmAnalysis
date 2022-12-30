@@ -6,7 +6,7 @@ def extract_data() :
     
     # écrire vers un fichier txt
     raw_data = film.get_donnees_film()
-    with open(r'/app/data_film.txt', 'a') as f :
+    with open(r'/app/data/data_film.txt', 'w') as f :
         for titre, info in raw_data.items() : 
 
             f.write( str(titre)+ '\t' + str(info[0][0])+ '\t' + str(info[0][1]) + '\t' + str(info[0][2])\
@@ -21,7 +21,7 @@ def write_titre_txt() :
     """ permet d'ecrire le titre des films dans un fichier txt et utilisation dans bash"""
     
     raw_data = film.get_donnees_film()
-    with open(r'/app/titre_film.txt', 'a') as f :
+    with open(r'/app/data/titre_film.txt', 'w') as f :
         for titre in raw_data.keys() :
             f.write('-' + titre + '\n') 
     f.close()
