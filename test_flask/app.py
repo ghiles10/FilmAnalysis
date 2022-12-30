@@ -3,14 +3,14 @@ import sys
 
 # ajouter le module dans liste des modules pour faire appel
 sys.path.append(r"./scripts")
-import recuperation_infos_spark 
+import requete_post_affichage 
 
 app = Flask(__name__)
 
 def get_title_info(title):
 
     # récupérer les informations du titre ici
-    title_info = recuperation_infos_spark.affichage_info(str(title))
+    title_info = requete_post_affichage.affichage_info(str(title))
     return title_info
 
 @app.route('/', methods=['GET', 'POST'])
