@@ -7,7 +7,7 @@ The project is deployed in a Docker container by creating a Dockerfile image. Th
 
 ## Getting Started
 
-If you are on a Linux operating system, please follow these steps to install and run our project
+If you are on a Linux operating system, please follow these steps to install and run the project
 
 `cd FilmAnalysis/notebook`
 
