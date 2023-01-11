@@ -13,7 +13,7 @@ def preprocess_to_csv() :
     spark_session = SparkSession.builder.appName('data_film').getOrCreate()
 
     # base de données
-    raw_data = spark_session.read.option("delimiter", "\t").csv(r'./data/data_film.txt', header=False)
+    raw_data = spark_session.read.option("delimiter", "\t").csv(r'./data/data_film.txt', header=False).cache()
     raw_data = raw_data.toDF('titre', 'date', 'duree', 'type', 'note', 'nombre avis', 'avis')
 
     # PREPROCESS
