@@ -1,9 +1,13 @@
 import film
+import os 
 
 def extract_data() : 
 
     """stocke les donnes dans un fichier texte"""
     
+    if not os.path.exists("src/data"):
+        os.mkdir("src/data")
+
     # écrire vers un fichier txt
     raw_data = film.get_donnees_film()
     with open('src/data/data_film.txt', 'w') as f :
