@@ -29,9 +29,6 @@ A Dockerfile image has been built which gathers all the elements of our project 
 
 If you are on a Linux operating system, please follow these steps to install and run the project
 
-`cd FilmAnalysis/notebook`
+`make run`
 
-`bash install.sh`
-
-`bash launch.sh`
 
